@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SavedGame" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/saved_game.gd" id="5_y0d1i"]
+
+[resource]
+script = ExtResource("5_y0d1i")
+timestamp = 1742407344
+position = Vector2(864.333, 134)
+level = 1
+gold = 0
+health = 30
+mana = 110
+inventory = Array[Resource]([])
+ice_damage = 25
+ice_initial_cooldown = 4
+ice_mana = 20
+fire_damage = 15
+fire_initial_cooldown = 7
+fire_mana = 30
+taken_items = Array[String]([])

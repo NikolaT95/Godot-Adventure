@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://caf6i3cvdowl2"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kgcby"]
+[ext_resource type="AudioStream" uid="uid://ddfheplvl8ogp" path="res://Assets/Music/walking-sound-effect-272246.mp3" id="2_b7225"]
+[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="3_hd64j"]
+[ext_resource type="AudioStream" uid="uid://dj05lxofl1wpb" path="res://Assets/Music/fist-punch-or-kick-7171.mp3" id="4_ipap1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aylnf"]
+size = Vector2(11, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drocs"]
+size = Vector2(12, 25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k03yl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti74"]
+bg_color = Color(0.653913, 0.0309486, 1.44392e-07, 1)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 7
+script = ExtResource("1_kgcby")
+
+[node name="RobotWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b7225")
+max_distance = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_aylnf")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 9)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_drocs")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(25, 3)
+offset_left = -12.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = -15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_k03yl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lti74")
+show_percentage = false
+script = ExtResource("3_hd64j")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="RobotHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ipap1")

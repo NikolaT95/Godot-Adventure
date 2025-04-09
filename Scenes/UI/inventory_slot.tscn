@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://bim0xqwkhf048"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_8awt2"]
+[ext_resource type="Texture2D" uid="uid://ywyctkvaki0l" path="res://Assets/UI/faceset_box.png" id="2_8dh32"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_1rr7q"]
+[ext_resource type="Script" path="res://Scripts/inventory_labels.gd" id="4_vyes1"]
+
+[node name="InventorySlot" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8awt2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("2_8dh32")
+
+[node name="MenuButton" type="MenuButton" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+popup/item_0/text = "Equip"
+popup/item_1/text = "Drop"
+popup/item_1/id = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MenuButton/CenterContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="StacksLabel" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.867
+anchor_top = 0.867
+anchor_right = 0.867
+anchor_bottom = 0.867
+offset_left = -19.02
+offset_top = -23.02
+offset_right = -0.0200043
+offset_bottom = -0.0200043
+theme = ExtResource("3_1rr7q")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+visible = false
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 100.0
+script = ExtResource("4_vyes1")
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_1rr7q")
+
+[node name="PriceLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("3_1rr7q")
+
+[node name="LevelLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_1rr7q")
+
+[node name="PropertyLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_1rr7q")
+
+[connection signal="mouse_entered" from="NinePatchRect/MenuButton/CenterContainer/TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/MenuButton/CenterContainer/TextureRect" to="." method="_on_texture_rect_mouse_exited"]

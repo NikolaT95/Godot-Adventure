@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponItem" load_steps=4 format=3 uid="uid://b78076r3o6ify"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_item.gd" id="1_3ib6h"]
+[ext_resource type="Shape2D" uid="uid://31uv1spgw4k1" path="res://Resources/Weapons/sword_item_collision_shape.tres" id="1_jy4ce"]
+[ext_resource type="Texture2D" uid="uid://cwmxa1t582ivd" path="res://Assets/Images/Items/sword_in_hand.png" id="2_kq4mg"]
+
+[resource]
+script = ExtResource("1_3ib6h")
+in_hand_texture = ExtResource("2_kq4mg")
+collision_shape = ExtResource("1_jy4ce")
+damage = 5

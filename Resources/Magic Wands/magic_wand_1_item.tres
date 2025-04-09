@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponItem" load_steps=3 format=3 uid="uid://dk5gulg0vbo3b"]
+
+[ext_resource type="Texture2D" uid="uid://c25xqdlsgkmec" path="res://Assets/Images/Items/magic_wand_in_hand.png" id="1_3312r"]
+[ext_resource type="Script" path="res://Scripts/weapon_item.gd" id="1_uhha3"]
+
+[resource]
+script = ExtResource("1_uhha3")
+in_hand_texture = ExtResource("1_3312r")
+left_attachment_position = Vector2(0, 0)
+right_attachment_position = Vector2(0, 0)
+front_attachment_position = Vector2(0, 0)
+back_attachment_position = Vector2(0, 0)
+left_rotation = 0
+right_rotation = 0
+front_rotation = 0
+back_rotation = 0
+left_z_index = 0
+right_z_index = 0
+front_z_index = 0
+back_z_index = 0

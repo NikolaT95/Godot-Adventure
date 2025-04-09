@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5ucrpeuuj2xg"]
+
+[ext_resource type="Texture2D" uid="uid://dq1k2dgddprji" path="res://Assets/Images/Items/gold_coin.png" id="1_7lsfy"]
+[ext_resource type="Script" path="res://Scripts/gold.gd" id="1_rmp3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yvhr"]
+size = Vector2(10, 10)
+
+[node name="Gold" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_rmp3h")
+name_item = "Gold"
+amount = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7lsfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5yvhr")

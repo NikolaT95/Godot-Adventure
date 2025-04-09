@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://4rblcssxek5p"]
+
+[ext_resource type="FontFile" uid="uid://bhgaoa225tloc" path="res://Assets/Fonts/CHRISTMAS PARTY.ttf" id="1_rtq1h"]
+
+[resource]
+default_font = ExtResource("1_rtq1h")
+selected/base_type = &"Button"

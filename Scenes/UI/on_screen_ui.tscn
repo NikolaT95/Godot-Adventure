@@ -1,0 +1,233 @@
+[gd_scene load_steps=14 format=3 uid="uid://cc4jft8hwhvuq"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="1_4iv80"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="2_rqyic"]
+[ext_resource type="PackedScene" uid="uid://bim0xqwkhf048" path="res://Scenes/UI/inventory_slot.tscn" id="3_qky31"]
+[ext_resource type="PackedScene" uid="uid://3272ns6xgd66" path="res://Scenes/UI/equipment_slot.tscn" id="3_v3eu0"]
+[ext_resource type="PackedScene" uid="uid://cblqslbuei6ae" path="res://Scenes/spell_slot.tscn" id="5_hvrhi"]
+[ext_resource type="Texture2D" uid="uid://birrsbxnykxi4" path="res://Assets/Images/Items/ice_slot_empty.png" id="6_phh63"]
+[ext_resource type="Texture2D" uid="uid://dbsvxf34qmqkw" path="res://Assets/Images/Items/fire_slot_empty.png" id="7_1mgy7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82pvd"]
+bg_color = Color(0.000245483, 0.000245483, 0.000245483, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnt4q"]
+bg_color = Color(1.68458e-07, 0.433538, 0.0560689, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhhe8"]
+bg_color = Color(0.982343, 0.982342, 0.982342, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnw5y"]
+bg_color = Color(0, 0.410196, 0.871917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfqs4"]
+bg_color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sals6"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 1)
+
+[node name="OnScreenUI" type="CanvasLayer"]
+script = ExtResource("1_4iv80")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -205.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_rqyic")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 5
+columns = 4
+
+[node name="InventorySlot" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 1
+
+[node name="InventorySlot3" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 2
+
+[node name="InventorySlot4" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 3
+
+[node name="InventorySlot5" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 4
+
+[node name="InventorySlot6" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 5
+
+[node name="InventorySlot7" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 6
+
+[node name="InventorySlot8" parent="VBoxContainer/GridContainer" instance=ExtResource("3_qky31")]
+layout_mode = 2
+index = 7
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -90.0
+offset_right = 269.0
+offset_bottom = -8.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="WeaponSlot" parent="HBoxContainer" instance=ExtResource("3_v3eu0")]
+unique_name_in_owner = true
+layout_mode = 2
+slot_name = "Weapon"
+
+[node name="BuffSlot" parent="HBoxContainer" instance=ExtResource("3_v3eu0")]
+unique_name_in_owner = true
+layout_mode = 2
+slot_name = "Buff"
+
+[node name="SpellSlot" parent="HBoxContainer" instance=ExtResource("3_v3eu0")]
+unique_name_in_owner = true
+layout_mode = 2
+slot_name = "Magic"
+
+[node name="PotionSlot" parent="HBoxContainer" instance=ExtResource("3_v3eu0")]
+unique_name_in_owner = true
+layout_mode = 2
+slot_name = "Potion"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -202.0
+offset_top = 10.0
+offset_right = -2.0
+offset_bottom = 57.0
+grow_horizontal = 0
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_82pvd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wnt4q")
+show_percentage = false
+
+[node name="ManaBar" type="ProgressBar" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hhhe8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nnw5y")
+show_percentage = false
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rqyic")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 93.0
+size_flags_horizontal = 4
+
+[node name="Gold" type="Label" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_rqyic")
+theme_override_colors/font_color = Color(0.505223, 0.431841, 0.123313, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rfqs4")
+text = "Gold: "
+
+[node name="Level" type="Label" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_rqyic")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sals6")
+text = "Level:  "
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -81.0
+offset_right = 62.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="IceAddButton" type="Button" parent="GridContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "+"
+
+[node name="FireAddButton" type="Button" parent="GridContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "+"
+
+[node name="Ice" parent="GridContainer" instance=ExtResource("5_hvrhi")]
+layout_mode = 2
+single_button_press = true
+starting_texture = ExtResource("6_phh63")
+start_label = "Ice"
+
+[node name="Fire" parent="GridContainer" instance=ExtResource("5_hvrhi")]
+layout_mode = 2
+index = 1
+single_button_press = true
+starting_texture = ExtResource("7_1mgy7")
+start_label = "Fire"
+
+[connection signal="pressed" from="GridContainer/IceAddButton" to="." method="_on_ice_add_button_pressed"]
+[connection signal="pressed" from="GridContainer/FireAddButton" to="." method="_on_fire_add_button_pressed"]

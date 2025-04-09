@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://3272ns6xgd66"]
+
+[ext_resource type="Script" path="res://Scripts/equipment_slot.gd" id="1_dxwou"]
+[ext_resource type="Texture2D" uid="uid://ywyctkvaki0l" path="res://Assets/UI/faceset_box.png" id="2_7bcuf"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_dqor3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djpdc"]
+bg_color = Color(0.865737, 0.821717, 0.663951, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wqw6"]
+bg_color = Color(0.866667, 0.823529, 0.662745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00034"]
+bg_color = Color(0.866667, 0.823529, 0.662745, 1)
+
+[node name="EquipmentSlot" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dxwou")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("2_7bcuf")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="StacksLabel" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.95
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = -21.0
+offset_top = -23.0
+theme = ExtResource("3_dqor3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -77.0
+offset_right = 60.0
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dqor3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_djpdc")
+
+[node name="LevelLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dqor3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wqw6")
+
+[node name="ProperyLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dqor3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_00034")
+
+[node name="SlotLabel" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("3_dqor3")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_exited" from="NinePatchRect/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

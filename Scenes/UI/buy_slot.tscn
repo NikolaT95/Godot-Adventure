@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://nf5q25qj2tlo"]
+
+[ext_resource type="Script" path="res://Scripts/buy_slot.gd" id="1_fo25q"]
+[ext_resource type="Texture2D" uid="uid://ywyctkvaki0l" path="res://Assets/UI/faceset_box.png" id="2_hpjja"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_vw4fk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi2id"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.596112, 0, 0.0330134, 1)
+
+[sub_resource type="Theme" id="Theme_8sulb"]
+selected/base_type = &"Button"
+selected/styles/normal = SubResource("StyleBoxFlat_yi2id")
+
+[node name="BuySlot" type="HBoxContainer"]
+offset_right = 184.0
+offset_bottom = 139.0
+script = ExtResource("1_fo25q")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("3_vw4fk")
+theme_override_colors/font_color = Color(0.757249, 0.812572, 0.0444397, 1)
+text = "sdf"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_hpjja")
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer2/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+popup/item_0/text = "Equip"
+popup/item_1/text = "Drop"
+popup/item_1/id = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2/NinePatchRect/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/NinePatchRect/MenuButton/CenterContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="OnClickButton" type="Button" parent="VBoxContainer2/NinePatchRect"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+theme = SubResource("Theme_8sulb")
+
+[node name="StacksLabel" type="Label" parent="VBoxContainer2/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.867
+anchor_top = 0.867
+anchor_right = 0.867
+anchor_bottom = 0.867
+offset_left = -19.02
+offset_top = -23.02
+offset_right = -0.0200043
+offset_bottom = -0.0200043
+theme = ExtResource("3_vw4fk")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PriceLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("3_vw4fk")
+text = "xcc"
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PropertyLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer2/NinePatchRect/OnClickButton" to="." method="_on_on_click_button_pressed"]

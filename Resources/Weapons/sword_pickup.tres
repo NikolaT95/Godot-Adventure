@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponPickUp" load_steps=5 format=3 uid="uid://q3budkilv2q6"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_pickup.gd" id="1_5flfa"]
+[ext_resource type="Shape2D" uid="uid://xto1ywad1pmx" path="res://Resources/Weapons/sword_pickup_collision_shape.tres" id="1_wr6lb"]
+[ext_resource type="Texture2D" uid="uid://cv4nirl7ye4w2" path="res://Assets/Images/Items/sword.png" id="2_a5odh"]
+[ext_resource type="Resource" uid="uid://b78076r3o6ify" path="res://Resources/Weapons/sword_item.tres" id="3_2wfnt"]
+
+[resource]
+script = ExtResource("1_5flfa")
+slot_type = "Weapon"
+name = "Sword"
+level = 1
+damage = 10
+texture = ExtResource("2_a5odh")
+ground_collision_shape = ExtResource("1_wr6lb")
+max_stacks = 1
+price = 10
+weapon_item = ExtResource("3_2wfnt")

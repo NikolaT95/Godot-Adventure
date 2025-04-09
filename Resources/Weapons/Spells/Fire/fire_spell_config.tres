@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=4 format=3 uid="uid://dc6up47v13yyt"]
+
+[ext_resource type="Shape2D" uid="uid://dowb2uklfepdc" path="res://Resources/Weapons/Spells/Fire/fire_collision_shape.tres" id="1_6p8um"]
+[ext_resource type="Script" path="res://Scripts/spell_config.gd" id="2_200e0"]
+[ext_resource type="Texture2D" uid="uid://d2dp8skl2s55d" path="res://Assets/Images/Items/fire_slot.png" id="3_86nc4"]
+
+[resource]
+script = ExtResource("2_200e0")
+speed = 40.0
+collision_shape = ExtResource("1_6p8um")
+spell_name = "Fire"
+initial_rotation = 90
+ui_texture = ExtResource("3_86nc4")
+initial_cooldown = 7.0
+mana = 30
+damage = 15

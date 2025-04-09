@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlhusu54kb06y"]
+
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_le16x"]
+[ext_resource type="Shader" path="res://Shader/game.gdshader" id="2_ahbpx"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_5dpt6"]
+[ext_resource type="AudioStream" uid="uid://rsdqosjjbiro" path="res://Assets/Music/Game-music.mp3" id="4_6em61"]
+[ext_resource type="AudioStream" uid="uid://53t5pmj11h5k" path="res://Assets/Music/Game-music2.mp3" id="5_sa0sb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muplh"]
+shader = ExtResource("2_ahbpx")
+shader_parameter/chromatic_aberration = 0.002
+shader_parameter/noise_intensity = 0.1
+shader_parameter/flicker_intensity = 0.05
+shader_parameter/glow_intensity = 0.3
+shader_parameter/warp_intensity = 0.03
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vv1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvoc0"]
+bg_color = Color(0.783535, 0.645886, 0.434061, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55rn3"]
+bg_color = Color(0.632887, 0.506738, 0.309443, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbhij"]
+bg_color = Color(0.917218, 0.823696, 0.68446, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_nyscc"]
+stream_count = 2
+stream_0 = ExtResource("4_6em61")
+stream_1 = ExtResource("5_sa0sb")
+
+[node name="Global" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_le16x")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_muplh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.5
+offset_right = 113.5
+offset_bottom = 131.0
+grow_horizontal = 2
+theme = ExtResource("3_5dpt6")
+theme_override_font_sizes/font_size = 100
+text = "Pause"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vv1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fvoc0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_55rn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbhij")
+text = "Save Game"
+
+[node name="QuitGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vv1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fvoc0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_55rn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbhij")
+text = "Quit Game"
+
+[node name="ExitGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vv1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fvoc0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_55rn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbhij")
+text = "Exit Game"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_nyscc")
+
+[connection signal="pressed" from="VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
