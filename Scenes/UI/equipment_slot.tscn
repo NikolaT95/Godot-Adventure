@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://3272ns6xgd66"]
 
-[ext_resource type="Script" path="res://Scripts/equipment_slot.gd" id="1_dxwou"]
+[ext_resource type="Script" path="res://Scripts/UI/equipment_slot.gd" id="1_dxwou"]
 [ext_resource type="Texture2D" uid="uid://ywyctkvaki0l" path="res://Assets/UI/faceset_box.png" id="2_7bcuf"]
 [ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_dqor3"]
 

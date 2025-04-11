@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2xsfesg5tkik"]
+
+[ext_resource type="Script" path="res://Scripts/Items/pick_up.gd" id="1_vvmxk"]
+[ext_resource type="Texture2D" uid="uid://dmssjtv6girbm" path="res://Assets/Images/Items/hammer.png" id="2_fxv3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kypla"]
+size = Vector2(8, 14)
+
+[node name="HammerPickUp" type="Area2D" groups=["pickup_items"]]
+collision_layer = 8
+script = ExtResource("1_vvmxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fxv3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kypla")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bim0xqwkhf048"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_8awt2"]
+[ext_resource type="Script" path="res://Scripts/UI/inventory_slot.gd" id="1_8awt2"]
 [ext_resource type="Texture2D" uid="uid://ywyctkvaki0l" path="res://Assets/UI/faceset_box.png" id="2_8dh32"]
 [ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="3_1rr7q"]
-[ext_resource type="Script" path="res://Scripts/inventory_labels.gd" id="4_vyes1"]
+[ext_resource type="Script" path="res://Scripts/UI/inventory_labels.gd" id="4_vyes1"]
 
 [node name="InventorySlot" type="VBoxContainer"]
 offset_right = 40.0

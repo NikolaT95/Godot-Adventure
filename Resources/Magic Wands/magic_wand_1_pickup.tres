@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MagicWandPickUp" load_steps=4 format=3 uid="uid://bxbirq5x0hin6"]
 
-[ext_resource type="Script" path="res://Scripts/magic_wand_pick_up.gd" id="1_cks7r"]
+[ext_resource type="Script" path="res://Scripts/Items/magic_wand_pick_up.gd" id="1_cks7r"]
 [ext_resource type="Texture2D" uid="uid://3jsrnoe5mpi7" path="res://Assets/Images/Items/magic_wand.png" id="2_vbow3"]
 [ext_resource type="Resource" uid="uid://dk5gulg0vbo3b" path="res://Resources/Magic Wands/magic_wand_1_item.tres" id="3_fxuhf"]
 

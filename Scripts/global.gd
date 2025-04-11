@@ -11,7 +11,7 @@ signal transition_done
 @onready var save_game_button: Button = $VBoxContainer/SaveGameButton
 
 @export var transition_time = 1.0
-const PLAYER = preload("res://Scenes/player.tscn")
+const PLAYER = preload("res://Scenes/Player/player.tscn")
 var next_scene_path: String
 var last_scene_name: String
 var is_transitioning = false
@@ -75,7 +75,7 @@ func pause_game():
 	#color_rect.modulate.a = 1
 
 func _on_exit_to_main_menu():
-	GlobalScene.change_scene("res://Scenes/main_menu.tscn")
+	GlobalScene.change_scene("res://Scenes/Menu/main_menu.tscn")
 
 func unpause_game():
 	label.hide()
@@ -112,4 +112,4 @@ func _on_exit_game_button_pressed() -> void:
 
 func _on_quit_game_button_pressed() -> void:
 	unpause_game()
-	GlobalScene.change_scene("res://Scenes/main_menu.tscn")
+	GlobalScene.change_scene("res://Scenes/Menu/main_menu.tscn")

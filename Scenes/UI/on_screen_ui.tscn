@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://cc4jft8hwhvuq"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="1_4iv80"]
+[ext_resource type="Script" path="res://Scripts/UI/inventory_ui.gd" id="1_4iv80"]
 [ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="2_rqyic"]
 [ext_resource type="PackedScene" uid="uid://bim0xqwkhf048" path="res://Scenes/UI/inventory_slot.tscn" id="3_qky31"]
 [ext_resource type="PackedScene" uid="uid://3272ns6xgd66" path="res://Scenes/UI/equipment_slot.tscn" id="3_v3eu0"]
-[ext_resource type="PackedScene" uid="uid://cblqslbuei6ae" path="res://Scenes/spell_slot.tscn" id="5_hvrhi"]
+[ext_resource type="PackedScene" uid="uid://cblqslbuei6ae" path="res://Scenes/UI/spell_slot.tscn" id="5_hvrhi"]
 [ext_resource type="Texture2D" uid="uid://birrsbxnykxi4" path="res://Assets/Images/Items/ice_slot_empty.png" id="6_phh63"]
 [ext_resource type="Texture2D" uid="uid://dbsvxf34qmqkw" path="res://Assets/Images/Items/fire_slot_empty.png" id="7_1mgy7"]
 

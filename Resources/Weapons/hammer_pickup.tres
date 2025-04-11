@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponPickUp" load_steps=5 format=3 uid="uid://da70exf00q712"]
 
-[ext_resource type="Script" path="res://Scripts/weapon_pickup.gd" id="1_tbv7m"]
+[ext_resource type="Script" path="res://Scripts/Items/weapon_pickup.gd" id="1_tbv7m"]
 [ext_resource type="Shape2D" uid="uid://ciif7oj3yubwb" path="res://Resources/Weapons/hammer_pick_up_collision_shape.tres" id="1_wgu17"]
 [ext_resource type="Texture2D" uid="uid://dmssjtv6girbm" path="res://Assets/Images/Items/hammer.png" id="2_gug4h"]
 [ext_resource type="Resource" uid="uid://ds5qosvcdganx" path="res://Resources/Weapons/hammer_item.tres" id="4_1cfn4"]

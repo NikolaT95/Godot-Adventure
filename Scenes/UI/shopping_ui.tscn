@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://ftqgpkebr0c4"]
+
+[ext_resource type="Script" path="res://Scripts/UI/shopping_ui.gd" id="1_nu5kn"]
+[ext_resource type="Theme" uid="uid://4rblcssxek5p" path="res://Assets/Themes/theme.tres" id="2_ttjhb"]
+
+[node name="ShoppingUI" type="CanvasLayer"]
+script = ExtResource("1_nu5kn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -241.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 16
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.352941, 0.396078, 0.462745, 0.960784)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MerchantColumn" type="VBoxContainer" parent="MarginContainer/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/HBoxContainer/MerchantColumn"]
+layout_mode = 2
+theme = ExtResource("2_ttjhb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "MERCHANT"
+horizontal_alignment = 1
+
+[node name="BuyingGridContainer" type="GridContainer" parent="MarginContainer/ColorRect/HBoxContainer/MerchantColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="BuyButton" type="Button" parent="MarginContainer/ColorRect/HBoxContainer/MerchantColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_ttjhb")
+disabled = true
+text = "Buy"
+
+[node name="CantBuyLabel" type="Label" parent="MarginContainer/ColorRect/HBoxContainer/MerchantColumn"]
+visible = false
+layout_mode = 2
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/ColorRect/HBoxContainer/MerchantColumn/BuyButton" to="." method="_on_buy_button_pressed"]

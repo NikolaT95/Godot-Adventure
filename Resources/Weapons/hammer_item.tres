@@ -2,7 +2,7 @@
 
 [ext_resource type="Shape2D" uid="uid://cjpm6srk47ita" path="res://Resources/Weapons/hammer_item_collision_shape.tres" id="1_4sgqt"]
 [ext_resource type="Texture2D" uid="uid://bba8s2r2ax2mu" path="res://Assets/Images/Items/hammer_in_hand.png" id="2_k0mca"]
-[ext_resource type="Script" path="res://Scripts/weapon_item.gd" id="3_ck655"]
+[ext_resource type="Script" path="res://Scripts/Items/weapon_item.gd" id="3_ck655"]
 
 [resource]
 script = ExtResource("3_ck655")

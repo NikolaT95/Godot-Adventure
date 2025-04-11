@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponItem" load_steps=3 format=3 uid="uid://dk5gulg0vbo3b"]
 
 [ext_resource type="Texture2D" uid="uid://c25xqdlsgkmec" path="res://Assets/Images/Items/magic_wand_in_hand.png" id="1_3312r"]
-[ext_resource type="Script" path="res://Scripts/weapon_item.gd" id="1_uhha3"]
+[ext_resource type="Script" path="res://Scripts/Items/weapon_item.gd" id="1_uhha3"]
 
 [resource]
 script = ExtResource("1_uhha3")

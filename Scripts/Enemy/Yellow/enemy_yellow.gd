@@ -2,7 +2,7 @@ extends Enemy
 
 signal died
 
-const ENEMY_YELLOW = preload("res://Scenes/enemy_yellow.tscn")
+const ENEMY_YELLOW = preload("res://Scenes/Enemy/enemy_yellow.tscn")
 func is_enemy_nearby(radius: float) -> bool:
 	var player_position = global_position
 	for enemy in get_tree().get_nodes_in_group("enemy_blue"):
