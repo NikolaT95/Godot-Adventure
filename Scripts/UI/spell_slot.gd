@@ -29,9 +29,13 @@ func _on_on_click_button_pressed() -> void:
 	on_screen_ui.on_spell_slot_clicked(index)
 
 func on_cooldown(cooldown_timer: float):
+	if !is_inside_tree():
+		return
 	color_rect.visible = true
 	var elapsed_time = 0.0
 	while elapsed_time < cooldown_timer:
+		if !is_inside_tree():
+			return
 		elapsed_time += get_process_delta_time()
 		var progress = elapsed_time / cooldown_timer
 		color_rect.size = Vector2(40, progress * 40)
