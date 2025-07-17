@@ -851,7 +851,7 @@ script = ExtResource("6_5h37t")
 blackboard = {
 "attack range": 30.0,
 "detection range": 150.0,
-"move threshold": 2.0,
+"move threshold": 1.0,
 "stuck threshold": 2.0,
 "wander radius": 30.0
 }

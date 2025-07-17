@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemy/Blue/is_in_danger.gd" id="22_ivc16"]
 [ext_resource type="Script" path="res://Scripts/Enemy/Blue/attack_player.gd" id="23_krjuv"]
 [ext_resource type="Script" path="res://Scripts/Enemy/Blue/attack_player_pause.gd" id="24_au0d7"]
-[ext_resource type="Script" path="res://Scripts/Enemy/Blue/wander.gd" id="25_dfl4t"]
+[ext_resource type="Script" path="res://Scripts/Enemy/wander.gd" id="25_dtht6"]
 [ext_resource type="Script" path="res://Scripts/Enemy/pause.gd" id="26_f7epu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4m08"]
@@ -944,7 +944,7 @@ script = ExtResource("17_33avg")
 script = ExtResource("9_6n28r")
 
 [node name="Wander" type="Node" parent="BeehaveTree/RootSelectorComposite/EngagementSelectorComposite/UntilFailDecorator/WanderSequenceComposite" index="0"]
-script = ExtResource("25_dfl4t")
+script = ExtResource("25_dtht6")
 
 [node name="Pause" type="Node" parent="BeehaveTree/RootSelectorComposite/EngagementSelectorComposite/UntilFailDecorator/WanderSequenceComposite" index="1"]
 script = ExtResource("26_f7epu")
