@@ -102,6 +102,10 @@ save={
 2d_physics/layer_7="Entrance"
 2d_physics/layer_8="Merchant"
 
+[navigation]
+
+3d/merge_rasterizer_cell_scale=0.001
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
