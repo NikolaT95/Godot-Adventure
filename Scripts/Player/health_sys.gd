@@ -20,7 +20,7 @@ var index
 var potion: PotionPickUp = null
 
 func init():
-	max_health = 20 + (player.level * 10)
+	max_health = 100 + (player.level * 10)
 	current_health = max_health
 	max_mana = 100 + (player.level * 10)
 	current_mana = max_mana

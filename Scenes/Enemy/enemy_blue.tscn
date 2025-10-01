@@ -854,7 +854,7 @@ parameters/Walk/BlendSpace2D/blend_position = Vector2(-0.00129032, -0.00724638)
 script = ExtResource("6_6cpwx")
 blackboard = {
 "attack range": 30.0,
-"detection range": 150.0,
+"detection range": 100.0,
 "heal range": 70,
 "move threshold": 2.0,
 "stuck threshold": 2.0,

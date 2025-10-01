@@ -63,5 +63,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var enemy = area.get_parent() as Enemy
 		if is_attacking == true:
 			melee_hit.play()
-			enemy.apply_damage(weapon_.damage)
+			enemy.apply_damage(weapon_.damage + player.damage)
 			enemy.is_hit = true
