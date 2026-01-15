@@ -7,3 +7,4 @@ Godot, GDScript, 2D, Beehave addon (behavior tree)
 <img src ="https://github.com/user-attachments/assets/a8d60f6c-e94d-470b-9208-06a9cca4b444" width="450" height="250">
 
 
+<img src ="https://github.com/user-attachments/assets/950f03c6-f6a6-4ab2-8b76-3372a827cbb3" width="450" height="250">
